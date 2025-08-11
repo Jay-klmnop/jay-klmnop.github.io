@@ -1,94 +1,79 @@
 name: Bug Report
-description: There is something wrong with the theme. 99% of the time you should select Support below.
+about: Create a report to help us improve
+title: "[BUG] "
+labels: bug
 body:
   - type: markdown
     attributes:
       value: |
-        Before opening a new issue please:
-
-        - Verify you have the latest versions of Jekyll and Minimal Mistakes
-          installed by running `bundle update`.
-        - Thoroughly read the theme's documentation at
-          https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-        - Search all issues at https://github.com/mmistakes/minimal-mistakes/issues
-          for solutions and to avoid duplication.
-        - Ask for help at https://talk.jekyllrb.com/
-
-        If none of the above solved your problem, you can continue below.
-
+        ### Describe the Bug
+        A clear and concise description of what the bug is.
   - type: textarea
-    id: environment
+    id: bug_description
     attributes:
-      label: Theme version and system environment
-      description: |
-        Please include theme version, Jekyll version, public git repository, whether
-        you are hosting with GitHub Pages, and the operating system you tested with.
-
-        Issues without a link to a public repository or ZIP file will likely go ignored.
-        Being able to see your actual files is necessary to troubleshoot, as most
-        issues stem from invalid/missing YAML Front Matter, a mis-configured _config.yml
-        file, or problematic site content.
-      value: |-
-        - Minimal Mistakes version:
-        - Ruby gem or remote theme version:
-        - Jekyll version:
-        - Git repository URL:
-        - URL to the page with the problem:
-        - Operating system:
-        - Browser version:
+      label: Bug Description
+      placeholder: Describe the bug clearly here.
     validations:
       required: true
-
-  - type: textarea
-    id: what-happened
+  - type: markdown
     attributes:
-      label: What happened?
-      description: |
-        Describe the problem **in detail**. For example:
-
-        - What is missing?
-        - What error do you see? Attach the error log if available.
+      value: |
+        ### Steps to Reproduce
+        Steps to reproduce the behavior.
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps
+      placeholder: 1. Go to '...'\n2. Click on '...'\n3. See error
     validations:
       required: true
-
-  - type: textarea
-    id: expected-behavior
+  - type: markdown
     attributes:
-      label: Expected behavior
-      description: |
-        Please describe the expected behavior and the actual result you got.
-      placeholder: >
-        What is it you expected to happen? This should be a description of how the
-        functionality you tried to use is supposed to work.
+      value: |
+        ### Expected Behavior
+        What you expected to happen.
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      placeholder: Describe what you expected.
     validations:
       required: true
-
-  - type: textarea
-    id: steps-to-reproduce
+  - type: markdown
     attributes:
-      label: Steps to reproduce the behavior
-      description: |
-        Describe the steps you took for this problem to come up. Such as: you installed
-        the theme, customized _config.yml, added your own posts, and started up a
-        Jekyll server locally.
-
-        If an error occurred on GitHub Pages when pushing, please test a local version
-        following these setup instructions:
-        https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
-
-        Then provide a complete log by running `bundle exec jekyll build --trace --verbose`
-        and include this output in the filed issue.
-
-        Screenshots can also be included if they help illustrate a behavior.
-    validations:
-      required: true
-
+      value: |
+        ### Screenshots (Optional)
+        Add screenshots if applicable.
   - type: textarea
-    id: other
+    id: screenshots
     attributes:
-      label: Other
-      description: |
-        Please provide a code repository, gist, code snippet, sample files,
-        screenshots, or anything else you think will aid in reproducing the issue.
-    validations:
-      required: false
+      label: Screenshots
+      placeholder: Paste links or describe images.
+  - type: markdown
+    attributes:
+      value: |
+        ### Environment
+  - type: dropdown
+    id: os
+    attributes:
+      label: OS
+      options:
+        - Windows 11
+        - macOS Sonoma
+        - Linux
+        - Other
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: Version number or build info
